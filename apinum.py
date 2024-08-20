@@ -15,7 +15,7 @@ def search_in_table(table_name, lookup_value):
     conn = mysql.connector.connect(**db_config)
     cursor = conn.cursor()
 
-    query = f"SELECT your_column FROM {table_name} WHERE your_lookup_column = %s"
+    query = f"SELECT telefono {table_name} WHERE documento = %s"
     cursor.execute(query, (lookup_value,))
 
     result = cursor.fetchone()
